@@ -117,7 +117,7 @@ const renderChatSection = (data, currentUser) => {
                         <span class="online_icon"></span>
                     </div>
                     <div class="user_info">
-                        <span id='name-chat-change' data-chatws="${data.id}">${data.name}</span>
+                        <span id='name-chat-change' class="color_p" data-chatws="${data.id}">${data.name}</span>
                         <p>1767 Messages</p>
                     </div>
                     <div class="video_cam">
@@ -125,8 +125,8 @@ const renderChatSection = (data, currentUser) => {
                         <span><i class="fas fa-phone"></i></span>
                     </div>
                 </div>
-                <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
-                <div class="action_menu">
+                <span id="action_menu_btn" class="color_p"><i class="fas fa-ellipsis-v"></i></span>
+                <div class="action_menu"  id="action_menu">
                     <ul>
                         <li><i class="fas fa-user-circle"></i> View profile</li>
                         <li><i class="fas fa-users"></i> Add to close friends</li>
@@ -196,6 +196,13 @@ const renderChatSection = (data, currentUser) => {
         chatSocket.send(JSON.stringify({ 'command': 'new_message', 'message': messageChange,  }));
         messageSendChange.value = '';
     });
+
+    $(document).ready(function(){
+        $('#action_menu_btn').click(function(){
+            $('.action_menu').toggle();
+        });
+    });
+
     
 }
 

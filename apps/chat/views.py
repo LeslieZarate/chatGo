@@ -31,7 +31,6 @@ class PageChatView(APIView):
 
         return render(request, 'chat.html' , { 'user' : request.user , "user_contact" : user_contact , 'chat': chat_obj } )
 
-
 class ChatView(viewsets.ModelViewSet):
     permission_classes = ()
     serializer_class = ChatSerializer 

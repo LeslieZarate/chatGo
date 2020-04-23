@@ -1,15 +1,57 @@
+{% extends 'index.html' %}
+{% load static %}
+{%block header %}
 
-{% extends "admin/base.html" %}
-{% block title %}Login{% endblock %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />    
 
-{% block content %}
+{%endblock%}
 
-<h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
+{%block content %}
+<div class="container-fluid h-100">
+	<div class="row h-100 justify-content-center ">
+		<div class="col-sm-6 col-md-6 col-xl-6 container_img"></div>
 
-  {% endblock content %}
+		<div class="col-sm-6 col-md-6 col-xl-6 d-flex align-items-center justify-content-center" >
+			<div class="login d-flex  flex-column  justify-content-between">
+				 <!-- Icon -->
+				<div class="card-header-login msg_head p-4">
+					<h1 class="text-center title_p">ChatGo!</h1>					
+				 </div>	
+				<p class="text-center text_p m-4 ">Bienvenido, no hay nada mejor que estar conectado.</p>	  
+				
+				<form class="h-75 d-flex flex-column align-items-center" method="post">
+					{% csrf_token %}
+					{% if form.errors %}
+						{% for field_with_error,error_messages in form.errors.items %}
+							<div class="alert alert-danger form-group errors"> {{error_messages }}</div>
+						{% endfor %}
+					{% endif %}
+					
+								
+					
+					<div class="form-group form_input ">
+					 <!-- <label for="exampleInputEmail1">Email address</label> 
+					  <input type="email" class="form-control" id="email" placeholder="Email" required> -->
+					  {{ form.email }}
+					</div>
+					<div class="form-group form_input">
+					 
+					 <!--   <input type="password" class="form-control" id="password" placeholder="Password" required> -->
+					  {{ form.password }}
+					</div>
+					<div class="form_btn mt-3 mb-2">
+						<button type="submit" class="btn btn_login">Log In</button>
+					</div>
+					
+				</form>
+				
+				<!-- Remind Passowrd -->
+				<div class="card-footer-login text-center text_p login_footer mt-5">
+					<a class="underlineHover " href="#">Forgot Password?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
+{% endblock %}  
