@@ -16,9 +16,10 @@ body,html{
 .chat{
     margin-top: auto;
     margin-bottom: auto;
+    
 }
 .card{
-    height: 500px;
+    height:90vh;
     border-radius: 15px !important;
     border-color: #d0d0f6;
 }
@@ -29,6 +30,7 @@ body,html{
 }
 .msg_card_body{
     overflow-y: auto;
+    
 }
 .card-header{
     border-radius: 15px 15px 0 0 !important;
@@ -42,6 +44,7 @@ body,html{
 }
 .container{
     align-content: center;
+   
 }
 .search{
     border-radius: 15px 0 0 15px !important;
@@ -161,7 +164,7 @@ margin-bottom: auto;
 margin-left: 10px;
 border-radius: 25px;
 background-color: #9b9af3;
-padding: 10px 30px;
+padding: 10px 35px;
 position: relative;
 }
 .msg_cotainer_send{
@@ -170,8 +173,9 @@ margin-bottom: auto;
 margin-right: 10px;
 border-radius: 25px;
 background-color: #e17ca5;
-padding: 10px 30px;
+padding: 10px 35px;
 position: relative;
+
 }
 .msg_time{
 position: absolute;
@@ -179,7 +183,7 @@ left: 0;
 bottom: -15px;
 color: #666666;
 font-size: 10px;
-width: 8vw;
+width: auto;
 }
 .msg_time_send{
 position: absolute;
@@ -187,12 +191,12 @@ right:0;
 bottom: -15px;
 color: #666666;
 font-size: 10px;
-width: 8vw;
+width: auto;
 }
 .msg_head{
 position: relative;
 }
-#action_menu_btn{
+.action_menu_btn{
 position: absolute;
 right: 10px;
 top: 10px;
@@ -304,6 +308,7 @@ background-color: rgba(0,0,0,0.2);
 
 .prueba{
     background-color: red;
+    border: 2px solid yellow
 }
 
 .login_footer{
@@ -340,11 +345,13 @@ background-color: rgba(0,0,0,0.2);
     .mx-10{
         margin: 4rem  auto
     }
+
+    
  
     
 }
 
-@media(max-width: 760px){
+@media(max-width: 1247px){
     
-    
+   
 }

@@ -124,16 +124,16 @@ const renderChatSection = (data, currentUser) => {
                         <span><i class="fas fa-video"></i></span>
                         <span><i class="fas fa-phone"></i></span>
                     </div>
-                </div>
-                <span id="action_menu_btn" class="color_p"><i class="fas fa-ellipsis-v"></i></span>
-                <div class="action_menu"  id="action_menu">
-                    <ul>
-                        <li><i class="fas fa-user-circle"></i> View profile</li>
-                        <li><i class="fas fa-users"></i> Add to close friends</li>
-                        <li><i class="fas fa-plus"></i> Add to group</li>
-                        <li><i class="fas fa-ban"></i> Block</li>
-                    </ul>
-                </div>
+                    <span id="action_menu_btn" class="color_p action_menu_btn "><i class="fas fa-ellipsis-v"></i></span>
+						<div class="action_menu" id="action_menu">
+							<ul>
+								<li><i class="fas fa-user-circle"></i> View profile</li>
+								<li><i class="fas fa-users"></i> Add to close friends</li>
+								<li><i class="fas fa-plus"></i> Add to group</li>
+								<li><i class="fas fa-ban"></i> Block</li>
+						</ul>
+					</div>
+                </div>                
             </div>
 
             <div class="card-body msg_card_body" id="msg-card-body-change"></div>
@@ -199,11 +199,10 @@ const renderChatSection = (data, currentUser) => {
 
     $(document).ready(function(){
         $('#action_menu_btn').click(function(){
-            $('.action_menu').toggle();
+            $('#action_menu').toggle();
         });
     });
-
-    
+        
 }
 
 const itemChat = (data, currentUser) => {
@@ -264,12 +263,4 @@ const renderChatList = async (currentUser) => {
 
 
 renderChatList(contactUser)
-
-
-
-
-
-
-
-
 
