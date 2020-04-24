@@ -11,19 +11,35 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ
+
+env = environ.Env( # set casting, default value
+   DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# False if not in os.environ
+DEBUG = False
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env('SECRET_KEY')
+
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$!4n@qqd1*-xwc%i!roq8d%m(0#&mm%)k*55ufjtfpaty!ag-l'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = ['chatgo200.herokuapp.com','127.0.0.1']
 
@@ -96,10 +112,10 @@ DATABASES = {
 
 CHANNEL_LAYERS = {
     'default': {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "BACKEND": "asgi_redis.RedisChannelLayer",
         'CONFIG': {
             "hosts": ["redis://:dq0AZxdTloU41OTKmvcp44blxm4O5gSz@redis-11479.c17.us-east-1-4.ec2.cloud.redislabs.com:11479/0"],
-             "symmetric_encryption_keys": [SECRET_KEY],
+            #"symmetric_encryption_keys": [SECRET_KEY],
          
         },
         "ROUTING": "routing.application",
