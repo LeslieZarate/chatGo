@@ -10,4 +10,4 @@ for path in PATHS:
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 
-application = get_wsgi_application()
+application = channels.asgi.get_wsgi_application()
