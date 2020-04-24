@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # False if not in os.environ
-DEBUG = False
+DEBUG = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
@@ -112,13 +112,13 @@ DATABASES = {
 
 CHANNEL_LAYERS = {
     'default': {
-        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
         'CONFIG': {
             "hosts": ["redis://:dq0AZxdTloU41OTKmvcp44blxm4O5gSz@redis-11479.c17.us-east-1-4.ec2.cloud.redislabs.com:11479/0"],
-            #"symmetric_encryption_keys": [SECRET_KEY],
+            "symmetric_encryption_keys": [SECRET_KEY],
          
         },
-        "ROUTING": "routing.application",
+        #"ROUTING": "routing.application",
     },
 }
 
