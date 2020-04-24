@@ -102,7 +102,7 @@ CHANNEL_LAYERS = {
              "symmetric_encryption_keys": [SECRET_KEY],
          
         },
-        "ROUTING": "settings.routing.application",
+        "ROUTING": "routing.application",
     },
 }
 
