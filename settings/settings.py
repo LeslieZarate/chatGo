@@ -25,7 +25,7 @@ SECRET_KEY = '$!4n@qqd1*-xwc%i!roq8d%m(0#&mm%)k*55ufjtfpaty!ag-l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['chatgo200.herokuapp.com','127.0.0.1']
 
 
 # Application definition
