@@ -1,5 +1,6 @@
 import os
 import sys
+import channels.asgi
 
 from django.core.wsgi import get_wsgi_application
 
