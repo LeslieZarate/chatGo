@@ -96,7 +96,7 @@ DATABASES = {
 
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        "BACKEND": "asgi_redis.RedisChannelLayer",
         'CONFIG': {
             "hosts": ["redis://:dq0AZxdTloU41OTKmvcp44blxm4O5gSz@redis-11479.c17.us-east-1-4.ec2.cloud.redislabs.com:11479/0"],
              "symmetric_encryption_keys": [SECRET_KEY],
