@@ -18,8 +18,11 @@ const cardSection = document.getElementById('card-section');
 
 // ----------  SOCKET --------------
 
+let ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+
+
 let chatSocket = new WebSocket(
-    'ws://' + window.location.host + '/ws/chat/' + idNameChat + '/'
+    ws_scheme + '://'  + window.location.host + '/ws/chat/' + idNameChat + '/'
 );
 
 chatSocket.onopen = function (e) {
@@ -149,12 +152,12 @@ const renderChatSection = (data, currentUser) => {
                 </div>
             </div>    
     `;
-    cardSection.append(card);
-    
+    cardSection.append(card);    
 
     const msgCardChange = card.querySelector('#msg-card-body-change')
+    
     chatSocket = new WebSocket(
-        'ws://' + window.location.host + '/ws/chat/' + data.id + '/'
+        ws_scheme + '://'  + window.location.host + '/ws/chat/' + data.id + '/'
     );
     chatSocket.onopen = function (e) {
         console.log('new connect ')
