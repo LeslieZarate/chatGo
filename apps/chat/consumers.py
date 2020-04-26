@@ -27,7 +27,7 @@ class ChatConsumer(WebsocketConsumer):
    
     def fetch_messages(self,data):
         
-        messages = Message.objects.all().filter(chat__id=data['chat'])
+        messages = Message.objects.all().filter(chat__id=data['chat']).order_by('id')
         serializer = MessageSerializer(messages,many=True)
         content = {
             'command': 'messages',
